@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alta Alumno</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    
+    <p th:text="'Nombre: ' + ${alumno.nombre}" />
+    <p th:text="'Apellido: ' + ${alumno.apellido}" />
+    <p th:text="'DNI: ' + ${alumno.DNI}" />
+    <p th:text="'telefono: ' + ${alumno.telefono}" />
+    <p th:text="'mail: ' + ${alumno.mail}" />
+    <a href="/altaAlumno">Submit another Alumno</a>
+</body>
+</html>

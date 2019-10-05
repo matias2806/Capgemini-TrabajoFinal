@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alta Alumno</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Form de alta de Alumnos</h1>
+    <form action="#" th:action="@{/altaAlumno}" th:object="${alumno}" method="post">
+    	
+        <p>Nombre: <input type="text" th:field="*{nombre}" /></p>
+        <p>Apellido: <input type="text" th:field="*{apellido}" /></p>
+        <p>DNI: <input type="text" th:field="*{DNI}" /></p>
+        <p>telefono: <input type="text" th:field="*{telefono}" /></p>
+        <p>mail: <input type="text" th:field="*{mail}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
