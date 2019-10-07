@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Log In</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Log in de profesores</h1>
+	
+    <form action="#" th:action="@{/logIn}" th:object="${prof}" method="post">
+    	
+        <p>mailUsuario: <input type="text" th:field="*{mail}" /></p>
+        <p>password: <input type="text" th:field="*{password}" /></p>
+        
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    
+    <a title="BusquedaCursos" href="http://localhost:8080/busquedaCursos"><button>Busqueda por cursos</button></a>  
+    
+</body>
+</html>

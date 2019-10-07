@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Busqueda por cursos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Form busqueda de temas</h1>
+	 <form action="#" th:action="@{/busquedaCursos}" th:object="${aBuscar}" method="post">
+	 
+	     <p>Nombre curso: <input type="text" th:field="*{nombreDelCurso}" /></p>
+	 
+    	<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    	<a href="/altaAlumno">vuelta al comienzo</a>
+    </form>
+    
+    
+     
+</body>
+</html>

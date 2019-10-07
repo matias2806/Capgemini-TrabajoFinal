@@ -6,31 +6,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Alumno {
-	
+public class Profesor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;//pk
-	
-	private long idCurso;//pk
+	private long idProfesor;//pk
 	private String nombre;
 	private String apellido;
 	private long DNI;
+	private String direccion;
 	private long telefono;
 	private String mail;
+	private String password;
 	
-	
-	public long getId() {
-		return id;
+	public long getIdProfesor() {
+		return idProfesor;
 	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public long getIdCurso() {
-		return idCurso;
-	}
-	public void setIdCurso(long idCurso) {
-		this.idCurso = idCurso;
+	public void setIdProfesor(int idProfesor) {
+		this.idProfesor = idProfesor;
 	}
 	public String getNombre() {
 		return nombre;
@@ -38,41 +30,41 @@ public class Alumno {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
 	public String getApellido() {
 		return apellido;
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
 	public long getDNI() {
 		return DNI;
 	}
 	public void setDNI(long dNI) {
 		DNI = dNI;
 	}
-	
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
 	public long getTelefono() {
 		return telefono;
 	}
 	public void setTelefono(long telefono) {
 		this.telefono = telefono;
 	}
-	
 	public String getMail() {
 		return mail;
 	}
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	
-	
-	@Override
-	public String toString() {
-		return "Alumno [id=" + id + ", idCurso=" + idCurso + ", getNombre()=" + getNombre() + ", getApellido()="
-				+ getApellido() + ", getDNI()=" + getDNI() + ", getTelefono()=" + getTelefono() + ", getMail()="
-				+ getMail() + "]";
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
