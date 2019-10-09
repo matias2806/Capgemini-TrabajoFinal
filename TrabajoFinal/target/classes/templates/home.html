@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="static/css/home.css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+	<div class="wrapper fadeInDown">
+        <div id="formContent">
+            <br/>
+	        <h1 type ="type">Inicio<h1>
+	
+	        <h5 type ="type">Bienvenido a la aplicacion de la escuelita de Carlos para fines academicos, carga de alumnos en el sistema y busqueda de cursos por tema</h5>
+            <br/><br/>
+
+            <div class="row" id="aa">
+                <div class="col-lg-6 col-sm-6" >
+                	<a title="altaAlumno" href="/altaAlumno"><button type="button" class="btn btn-success">Alta de un nuevo alumno</button></a>
+                </div>
+                <div class="col-lg-6 col-sm-6" >
+                	<a title="BusquedaCursos" href="http://localhost:8080/busquedaCursos"><button type="button" class="btn btn-warning">Busqueda por cursos</button></a>
+                </div>
+            </div>
+        <br/><br/>
+        </div>
+    </div>
+</body>
+</html>

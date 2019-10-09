@@ -67,7 +67,7 @@ public class AlumnoController {
 			
 		}
 		
-        return "finDelForm";
+        return "finDelForm"; //despues cambiarlo por home
     }
 	
 }

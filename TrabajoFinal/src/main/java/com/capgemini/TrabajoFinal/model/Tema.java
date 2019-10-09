@@ -9,15 +9,15 @@ import javax.persistence.Id;
 public class Tema {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String idTema;
+	private long idTema;
 	private String nombreDelCurso; //pk
 	private int idCurso;//pk
 	
-	public String getIdTema() {
+	public long getIdTema() {
 		return idTema;
 	}
 	
-	public void setIdTema(String idTema) {
+	public void setIdTema(long idTema) {
 		this.idTema = idTema;
 	}
 

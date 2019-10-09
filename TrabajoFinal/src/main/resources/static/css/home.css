@@ -1,0 +1,61 @@
+body{
+  background-size: 120vw 108vh;
+  background-image: url("../img/capgemini.jpg");
+  z-index: -1;
+  position: sticky;
+}
+
+h1[type=type] {
+  /*background-color: #f6f6f6;*/
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 65px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 8px, 10px;
+  width: 85%;
+  /*border: 2px solid #f6f6f6;
+  border-radius: 5px 5px 5px 5px;*/
+}
+h5[type=type] 
+{
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 65px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 8px, 10px;
+}
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 50px;
+}
+
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: rgba(255, 255, 255, 0.645);
+  padding: 0px;
+  width: 70%;
+  max-width: 800px;
+  height: 60%;
+  max-height: 1400px;
+  position: relative;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  margin-top: 30px;
+}

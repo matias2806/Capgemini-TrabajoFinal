@@ -11,6 +11,19 @@
     <p th:text="'nombreCurso: ' + ${tema.nombreDelCurso}" />
     <p th:text="'nombreCurso: ' + ${tema.idCurso}" />
     
+    <tr th:each="tema, itemStat : ${listaTemas}">
+    <td>
+        <input hidden th:name="|tema[${itemStat.index}].id|" th:value="${tema.getIdTema()}"/>
+    </td>
+    <td>
+        <input th:name="|tema[${itemStat.index}].nombreDelCurso|" th:value="${tema.getNombreDelCurso()}"/>
+    </td>
+    <td>
+        <input th:name="|tema[${itemStat.index}].idCurso|" th:value="${tema.getIdCurso()}"/>
+    </td>
+</tr>
+    
+    
     <a href="/busquedaCursos">Submit another cursos</a>
 </body>
 </html>
