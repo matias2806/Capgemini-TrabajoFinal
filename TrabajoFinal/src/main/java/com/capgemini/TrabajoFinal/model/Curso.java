@@ -29,6 +29,18 @@ public class Curso {
 	public void setIdProfesor(int idProfesor) {
 		this.idProfesor = idProfesor;
 	}
+
+	public Curso(long idCurso, String nombreCurso, int idProfesor) {
+		super();
+		this.idCurso = idCurso;
+		this.nombreCurso = nombreCurso;
+		this.idProfesor = idProfesor;
+	}
+
+	public Curso() {
+		super();
+	}
+	
 	 
 	 
 }

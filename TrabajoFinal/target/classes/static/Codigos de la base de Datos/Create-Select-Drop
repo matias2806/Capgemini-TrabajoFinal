@@ -1,0 +1,25 @@
+//Creo la base de dato y la uso
+create database proyectofinalmatias;
+use proyectofinalmatias;
+
+//Creo las tablas y relaciones 
+CREATE TABLE alumnos (idAlumno int primary key AUTO_INCREMENT , idCurso int, nombre nvarchar(45)
+, apellido nvarchar(45), DNI long, telefono long, mail nvarchar(45));
+CREATE TABLE cursos (idCurso int primary key AUTO_INCREMENT , nombreDelCurso nvarchar(45), 
+idProfesor int);
+CREATE TABLE temas (idTema int primary key AUTO_INCREMENT , nombreDelCurso nvarchar(45), idCurso int);
+CREATE TABLE profesores (idProfesor int primary key AUTO_INCREMENT , nombre nvarchar(45), 
+apellido nvarchar(45), dni long, direccion nvarchar(45), telefono long, mail nvarchar(45), 
+clave nvarchar(45));
+
+//veo alguna tabla
+select * from proyectofinalmatias.alumnos;
+select * from proyectofinalmatias.cursos;
+select * from proyectofinalmatias.temas;
+select * from proyectofinalmatias.profesores;
+
+//elimino las tablas
+drop table alumnos;
+drop table cursos;
+drop table profesores;
+drop table temas;

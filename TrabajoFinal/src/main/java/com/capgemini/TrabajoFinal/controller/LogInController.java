@@ -30,14 +30,13 @@ public class LogInController {
 	@RequestMapping(value="/logIn", method=RequestMethod.POST)
 	public String login(@ModelAttribute(name="prof")Profesor prof, Model model) {
 		
-		
 		ConexcionConMySql SQL = new ConexcionConMySql();
 		Connection conn = SQL.conectarMySQL();
 		String sSQL = "";
 
-		sSQL = "SELECT * FROM proyectofinalmatias.profesor;";
+		sSQL = "SELECT * FROM proyectofinalmatias.profesores;";
 		// PreparedStatement
-		System.out.println("a fuera del try");
+		
 		try {
 			PreparedStatement pstm = conn.prepareStatement(sSQL);
 			ResultSet rs = pstm.executeQuery();
@@ -45,13 +44,12 @@ public class LogInController {
 			while (rs.next()) {
 				String mail = rs.getString("mail");
 				String clave = rs.getString("clave");
-				System.out.println("---------------");
+				/*System.out.println("---------------");
 				System.out.println("BD mail= "+mail);
 				System.out.println("BD pw= "+clave);
 				System.out.println("prof mail= "+prof.getMail());
-				System.out.println("prof pw= "+prof.getPassword());
+				System.out.println("prof pw= "+prof.getPassword());*/
 				
-				//if(prof.getMail() == mail && prof.getPassword() == clave) {
 				if(mail.equals(prof.getMail()) && clave.equals(prof.getPassword())) {
 					return "home";
 				}
@@ -63,27 +61,6 @@ public class LogInController {
 		} finally {
 		}
 
-		return "logIn"; // despues cambiarlo por home
+		return "logIn"; 
 	}
-	
-	/*
-	//checking for login credentials
-	@RequestMapping(value="/logIn", method=RequestMethod.POST)
-	public String login(@ModelAttribute(name="prof")Profesor prof, Model model) {
-		String mail= prof.getMail();
-		String password = prof.getPassword();
-		
-		if("admin".equals(mail) && "admin".equals(password)) {
-			return "home";
-		}
-		else {
-			System.out.println ("Entra error");
-			
-			model.addAttribute("invalidCredentials", true);
-			return "logIn";
-		}
-	}*/
-	
-	
-	
 }

@@ -1,0 +1,29 @@
+
+INSERT INTO cursos (idCurso, nombreDelCurso, idProfesor) VALUES ("1","Los no-training", "2");
+INSERT INTO cursos (idCurso, nombreDelCurso, idProfesor) VALUES ("2","Los Buenos", "4");
+INSERT INTO cursos (idCurso, nombreDelCurso, idProfesor) VALUES ("3","CURSO_A", "1");
+INSERT INTO cursos (idCurso, nombreDelCurso, idProfesor) VALUES ("4","CURSO_b", "3");
+INSERT INTO cursos (idCurso, nombreDelCurso, idProfesor) VALUES ("5","Avengers", "3");
+
+
+INSERT INTO profesores (idProfesor, nombre, apellido, dni, direccion, telefono, mail, clave)VALUES ("1", "Daniel", "Guzzi", "35267765", "Blas parera 172", "1148724572","dani@guzzi.com", "soyDani");
+INSERT INTO profesores (idProfesor, nombre, apellido, dni, direccion, telefono, mail, clave)VALUES ("2", "Mario", "Gonzalez", "11234323", "Reconquista 3142", "1145764811","mario@gon.com", "gonzalez2f");
+INSERT INTO profesores (idProfesor, nombre, apellido, dni, direccion, telefono, mail, clave)VALUES ("3", "Claudio", "Peruzzi", "23456823", "J B Justo 120", "1178823938","claudio.Pe@gmail.com", "clauuu");
+INSERT INTO profesores (idProfesor, nombre, apellido, dni, direccion, telefono, mail, clave)VALUES ("4", "Profesor", "ABC", "123456789", "Calle falsa 123", "1234567890","ABC@gmail.com", "ABCD");
+
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("1","jpa", "2");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("2","jquery", "3");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("3","spring", "5");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("4","MySql", "4");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("5","HTML", "2");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("6","CSS", "1");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("7","java", "3");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("8","JPA 2", "2");
+INSERT INTO temas (idTema, nombreDelCurso, idCurso) VALUES ("9","spring", "1");
+
+
+INSERT INTO alumnos (idAlumno, idCurso, nombre, apellido, dni,telefono, mail)VALUES ("1", "2", "Matias", "Palmieri", "41079975",  "1136753439","matias@palmieri.com");
+INSERT INTO alumnos (idAlumno, idCurso, nombre, apellido, dni,telefono, mail)VALUES ("2", "3", "Cristian", "Laborede", "39285390",  "1123953487","crisL@gmail.com");
+INSERT INTO alumnos (idAlumno, idCurso, nombre, apellido, dni,telefono, mail)VALUES ("3", "1", "Gonzalo", "Rodriguez", "20348245",  "1176396283","gonza@hotmail.com");
+
+

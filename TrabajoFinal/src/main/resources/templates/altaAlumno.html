@@ -3,22 +3,88 @@
 <head>
     <title>Alta Alumno</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="static/css/altaAlumno.css" th:href="@{/css/altaAlumno.css}">
+      <script type="text/javascript" th:inline="javascript" src="/static/js/selector.js" th:src="@{/js/selector.js}" > </script>
+      <!-- -->
 </head>
 <body>
-	<h1>Form de alta de Alumnos</h1>
-    <form action="#" th:action="@{/altaAlumno}" th:object="${alumno}" method="post">
-    	
-        <p>Nombre: <input type="text" th:field="*{nombre}" /></p>
-        <p>Apellido: <input type="text" th:field="*{apellido}" /></p>
-        <p>DNI: <input type="text" th:field="*{DNI}" /></p>
-        <p>telefono: <input type="text" th:field="*{telefono}" /></p>
-        <p>mail: <input type="text" th:field="*{mail}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
-    
-    <a title="BusquedaCursos" href="http://localhost:8080/busquedaCursos"><button>Busqueda por cursos</button></a>
-    <a title="home" href="http://localhost:8080/home"><button>Home</button></a>
-    
-    
+	<div class="wrapper fadeInDown">
+        <div id="formContent">
+            <br/>
+            <h1>Alta de alumnos</h1>
+            <form action="#" th:action="@{/altaAlumno}" th:object="${alumno}"  method="post">
+       
+       		<div class="col-lg-6 col-sm-6" ></div>
+
+                <div class="row" id="aa">
+                    <div class="col-lg-2 col-sm-2" >
+       		
+                		<p>Curso:</p>
+                	</div>
+                <div class="col-lg-10 col-sm-10" >
+                	<select name="ListadoDeCursos"  th:field="*{idCurso}">
+                 	<option value="0" disabled >-- Seleccione un curso -- </option> 
+		            <option th:each="curso : ${cursos}"
+		              th:value="${curso.idCurso}" 
+		              th:text="${curso.nombreCurso}"
+		              th:selected="true"
+		             >
+		              </option>		              
+		        </select>
+		         </div>
+             </div>
+                
+	       
+                <div class="col-lg-6 col-sm-6" ></div>
+
+                <div class="row" id="aa">
+                    <div class="col-lg-2 col-sm-2" >
+                        <p>Nombre: </p>
+                    </div>
+                    <div class="col-lg-10 col-sm-10" >
+                        <input type="text" th:field="*{nombre}" required />
+                    </div>
+                </div>
+                
+                <div class="row" id="aa">
+                    <div class="col-lg-2 col-sm-2" >
+                        <p>Apellido: </p>
+                    </div>
+                    <div class="col-lg-10 col-sm-10" >
+                        <input type="text" th:field="*{apellido}" required />
+                    </div>
+                </div>
+
+                <div class="row" id="aa">
+                    <div class="col-lg-2 col-sm-2" >
+                            <p>DNI: </p>
+                    </div>
+                    <div class="col-lg-10 col-sm-10" >
+                        <input type="number" th:field="*{DNI}"  required/>
+                    </div>
+                </div>
+
+                <div class="row" id="aa">
+                    <div class="col-lg-2 col-sm-2" >
+                        <p>telefono: </p>
+                    </div>
+                    <div class="col-lg-10 col-sm-10" >
+                        <input type="number" th:field="*{telefono}" required placeholder=""/>
+                    </div>
+                </div>
+                
+                <div class="row" id="aa">
+                    <div class="col-lg-2 col-sm-2" >
+                        <p>mail: </p>
+                    </div>
+                    <div class="col-lg-10 col-sm-10" >
+                        <input type="text" th:field="*{mail}" required/>
+                    </div>
+                </div>
+                <p><input type="submit" value="Submit" /> </p>   
+            </form>            
+        </div>
+    </div>
 </body>
 </html>

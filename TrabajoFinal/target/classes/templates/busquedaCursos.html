@@ -3,18 +3,46 @@
 <head>
     <title>Busqueda por cursos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="static/css/busquedaCursos.css" th:href="@{/css/busquedaCursos.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
 </head>
 <body>
-	<h1>Form busqueda de temas</h1>
+
+<div class="wrapper fadeInDown">
+<div id="formContent">
+	<br/>
+	<h1>Busqueda de temas segun cursos</h1>
+	<br/>
 	 <form action="#" th:action="@{/busquedaCursos}" th:object="${aBuscar}" method="post">
 	 
-	     <p>Nombre curso: <input type="text" th:field="*{nombreDelCurso}" /></p>
-	 
-    	<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	     <!--<p>Nombre curso: <input type="text" th:field="*{nombreDelCurso}" required/></p>-->
+	     
+	     		<select name="ListadoDeCursos"  th:field="*{nombreCurso}">
+		            <option value="0"  disabled>Seleccione un curso</option>    
+		            <option th:each="curso : ${cursos}"
+		              th:value="${curso.idCurso}" 
+		              th:text="${curso.nombreCurso}"
+		             
+		             ></option>		         
+		        </select>
+	 		<br/>
+    	<p><input type="submit" value="Submit" /></p>
     	
     </form>
-    <a title="home" href="/home"><button>Home</button></a>
     
-     
+	<table class="table table-hover" >
+	<th>id del curso</th>
+	<th>nombre del  curso</th>
+	<th>id del profesor</th>
+	<tr  th:each="curso : ${cursos}">
+	<td  th:value="${curso.idCurso}" th:text="${curso.idCurso}"></td>
+	<td  th:value="${curso.nombreCurso}" th:text="${curso.nombreCurso}"></td>
+	<td  th:value="${curso.idProfesor}" th:text="${curso.idProfesor}"></td>
+	</tr>
+	
+	</table>
+ </div>   
+ </div>   
 </body>
 </html>

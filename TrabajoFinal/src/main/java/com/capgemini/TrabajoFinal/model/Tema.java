@@ -34,6 +34,19 @@ public class Tema {
 		this.idCurso = idCurso;
 	}
 
+	public Tema(long idTema, String nombreDelCurso, int idCurso) {
+		super();
+		this.idTema = idTema;
+		this.nombreDelCurso = nombreDelCurso;
+		this.idCurso = idCurso;
+	}
+
+	public Tema() {
+		super();
+	}
+	
+	
+
 
 	
 }

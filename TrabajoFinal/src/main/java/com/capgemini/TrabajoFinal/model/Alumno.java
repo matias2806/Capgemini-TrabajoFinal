@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Alumno {
@@ -16,6 +17,8 @@ public class Alumno {
 	private String nombre;
 	private String apellido;
 	private long DNI;
+	
+	@NotNull(message="El precio es obligatorio")
 	private long telefono;
 	private String mail;
 	

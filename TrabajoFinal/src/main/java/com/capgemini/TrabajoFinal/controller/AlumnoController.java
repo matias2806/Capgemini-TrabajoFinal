@@ -2,11 +2,13 @@ package com.capgemini.TrabajoFinal.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,26 +16,65 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.capgemini.TrabajoFinal.model.Alumno;
-import com.capgemini.TrabajoFinal.repository.AlumnoRepository;
+import com.capgemini.TrabajoFinal.model.Curso;
 import com.capgemini.TrabajoFinal.service.ConexcionConMySql;
 
 
 @Controller
 public class AlumnoController {
 	
-	//private static final Logger log = LoggerFactory.getLogger(AlumnoController.class);
+	//private static final Logger log = LoggerFactory.getLogger(AlumnoController.class);	
+	//@Autowired
+	//private AlumnoRepository alumRepository;
+	
+	public List<Curso> listaCurso ;
+
+@GetMapping("/altaAlumno")
+	public String altaAlumno(Model model) {
+		ConexcionConMySql SQL = new ConexcionConMySql();
+		Connection conn = SQL.conectarMySQL();
+		String sSQL = "";
+		sSQL = "select * from proyectofinalmatias.cursos;";
+		
+		listaCurso = new ArrayList<Curso>();
+		try {
+			PreparedStatement pstm = conn.prepareStatement(sSQL);
+			ResultSet rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				long idCurso = rs.getInt("idCurso");
+				String nombreCurso = rs.getString("nombreDelCurso");
+				int idProfesor = rs.getInt("idProfesor");
+				Curso cur = new Curso(idCurso, nombreCurso, idProfesor);
+				//System.out.println(idCurso);
+				//System.out.println(nombreCurso);
+				//System.out.println(idProfesor);
+				listaCurso.add(cur);
+			}
+			System.out.println(listaCurso.toString());
+			
+			model.addAttribute("cursos", listaCurso);
+			conn.close();
+		} catch (SQLException e) {
+		} catch (Exception w) {
+		} finally {
+		}
+		model.addAttribute("alumno", new Alumno());
+		//System.out.println("llego");
+		
+		return "altaAlumno";
+	}
 	
 	
 	
-	@Autowired
-	private AlumnoRepository alumRepository;
 	
+	/*
 	@GetMapping("/altaAlumno")
 	public String altaAlumno(Model model) {
 		model.addAttribute("alumno", new Alumno());
 		//System.out.println("llego");
 		return "altaAlumno";
-	}
+	}*/
 	
 	
 	@PostMapping("/altaAlumno")
@@ -67,7 +108,7 @@ public class AlumnoController {
 			
 		}
 		
-        return "finDelForm"; //despues cambiarlo por home
+        return "home"; //despues cambiarlo por home /finDelForm
     }
 	
 }

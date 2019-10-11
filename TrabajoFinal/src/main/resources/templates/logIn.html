@@ -4,8 +4,10 @@
     <title>Log In</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
+    
     <link rel="stylesheet" type="text/css" href="static/css/LogIn.css" th:href="@{/css/LogIn.css}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" th:inline="javascript" src="/static/js/selector.js" th:src="@{/js/selector.js}" > </script>
     
 </head>
 <body>
@@ -18,13 +20,14 @@
              <img src="img/iconPersona.png" id="icon" alt="User Icon" />
          </div>
          <br/><br/>
-         <form action="#" th:action="@{/logIn}" th:object="${prof}" method="post">   
+         <form action="#" th:action="@{/logIn}" th:object="${prof}" method="post"  >   
             <!-- <p th:if="${invalidCredentials, true}" class="error">Mail o password invalidas -->   
             
-            <input id="mail" class="fadeIn second" name="mail" placeholder=" Ingrese su mail" type="text" />
+            <input id="mail" class="fadeIn second" name="mail" placeholder=" Ingrese su mail" type="text" required/>
+            
             <br/><br/>
             
-            <input id="password"   class="fadeIn second" name="password" placeholder=" Ingrese su password"type="password" />
+            <input id="password"   class="fadeIn second" name="password" placeholder=" Ingrese su password"type="password" required />
             <br/><br/>
 			<input type="submit" value="Log in" /> 
             <br/><br/>
@@ -33,6 +36,6 @@
             <a class="underlineHover" href="#">Forgot Password?</a>
          </div>
       </div>
-    </div>
+    
 </body>
 </html>
